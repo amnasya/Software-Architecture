@@ -1,0 +1,47 @@
+{
+  "name": "wspeedrun",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "npm run auth:build",
+    "start": "npm run auth:start",
+    "start:dev": "npm run auth:start:dev",
+    "db:up": "docker compose up -d mysql",
+    "db:push": "prisma db push --config auth_service/prisma.config.ts",
+    "prisma:generate": "npm run auth:prisma:generate",
+    "auth:build": "nest build --path auth_service/tsconfig.build.json",
+    "auth:start": "nest start --path auth_service/tsconfig.json",
+    "auth:start:dev": "nest start --watch --path auth_service/tsconfig.json",
+    "auth:prisma:generate": "prisma generate --config auth_service/prisma.config.ts"
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.1.24",
+    "@nestjs/core": "^11.1.24",
+    "@nestjs/jwt": "^11.0.2",
+    "@nestjs/passport": "^11.0.5",
+    "@nestjs/platform-express": "^11.1.24",
+    "@nestjs/swagger": "^11.4.4",
+    "@prisma/adapter-mariadb": "^7.8.0",
+    "@prisma/client": "^7.8.0",
+    "axios": "^1.16.1",
+    "bcrypt": "^6.0.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.15.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.22.3",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1",
+    "prisma": "^7.8.0",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^11.0.14",
+    "@nestjs/schematics": "^11.0.9",
+    "@types/bcrypt": "^6.0.0",
+    "@types/node": "^24.10.1",
+    "@types/passport-jwt": "^4.0.1",
+    "typescript": "^5.9.3"
+  }
+}

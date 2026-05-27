@@ -8,14 +8,14 @@ export class RegisterDto {
   })
   @IsString()
   @IsNotEmpty()
-  username: string;
+  username!: string;
 
   @ApiProperty({
     example: 'runner@example.com',
     description: 'Unique email address used for login.',
   })
   @IsEmail()
-  email: string;
+  email!: string;
 
   @ApiProperty({
     example: 'Indonesia',
@@ -23,7 +23,7 @@ export class RegisterDto {
   })
   @IsString()
   @IsNotEmpty()
-  country: string;
+  country!: string;
 
   @ApiProperty({
     example: 'Str0ngPassword!',
@@ -32,5 +32,5 @@ export class RegisterDto {
   })
   @IsString()
   @MinLength(8)
-  password: string;
+  password!: string;
 }
